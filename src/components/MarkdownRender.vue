@@ -19,7 +19,7 @@
   watchEffect(async () => {
     if (props.path) {
       const res = await useMarkdownFragment(props.path)
-      html.value = res.html
+      html.value = await res.html // ✅ handle if html is a Promise
       meta.value = res.meta
     }
   })
