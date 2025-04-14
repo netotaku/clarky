@@ -78,7 +78,7 @@
         margin-top: -22px;
 
         &__desc{
-            padding: 22px;
+            padding: var(--global-padding);
         }
 
         a {
@@ -91,8 +91,8 @@
             
             position: relative;
             overflow: hidden;
-            border-top-left-radius: 22px;
-            border-top-right-radius: 22px;            
+            border-top-left-radius: var(--global-padding);
+            border-top-right-radius: var(--global-padding);            
             padding-bottom: 32px;  
             &:hover{
                 background: purple;
@@ -159,6 +159,7 @@
         background-position: center bottom; 
         @media (max-width: 600px) {
             padding-top: 86vw; 
+            background-position: -47vw bottom;
         } 
         .label{
             display: block;

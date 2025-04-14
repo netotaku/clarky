@@ -23,9 +23,7 @@
         background: #111;        
         color: #555;
         .made{
-            // position: absolute;
-            // bottom: 22px;
-            padding-top: 22px;
+            padding-top: var(--global-padding);;
         }
         .nav{
             list-style-type: none;

@@ -4,6 +4,16 @@
   box-sizing: border-box;
 }
 
+:root {
+  --global-padding: 22px;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --global-padding: 14px;
+  }
+}
+
 html{
   background: #333;
   color: #ccc;
@@ -12,5 +22,5 @@ html{
 }
 
 .section{
-  padding: 22px;
+  padding: var(--global-padding);
 }
