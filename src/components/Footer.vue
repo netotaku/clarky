@@ -7,7 +7,7 @@
             <li><a target="_blank" href="https://www.threads.net/@clar.ky">Threads</a></li>
             <li><a target="_blank" href="https://www.tiktok.com/@clar.ky">TikTok</a></li>
         </ul>
-        <p class="made">Copyright 2025, Made with love by me in Bristol, UK</p>
+        <p class="made">Copyright 2025, Bristol UK</p>
     </footer>
 </template>
 
@@ -20,12 +20,12 @@
 
     .footer{
         position: relative;
-        background: #111;
-        height: 160px;
+        background: #111;        
         color: #555;
         .made{
-            position: absolute;
-            bottom: 22px;
+            // position: absolute;
+            // bottom: 22px;
+            padding-top: 22px;
         }
         .nav{
             list-style-type: none;

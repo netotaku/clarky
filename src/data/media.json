@@ -1,19 +1,12 @@
 [
     
-    
+
     {
         "platform": "tiktok",
-        "url": "https://soundcloud.com/funspongerecords/1-night-of-the-vampire-talk-talk?in=funspongerecords%2Fsets%2Ffun-sponge-records-2nd-birthday-compilation",
-        "title": "Russian Kids",
-        "desc": "Dance Moves",
-        "thumbnail": "/img/covers/tt-russian.jpg",
-        "posted_at": "2023-08-27T18:01:22Z"
-    },{
-        "platform": "tiktok",
-        "url": "https://soundcloud.com/funspongerecords/1-night-of-the-vampire-talk-talk?in=funspongerecords%2Fsets%2Ffun-sponge-records-2nd-birthday-compilation",
-        "title": "Macka B",
-        "desc": "Dropping Knowledge",
-        "thumbnail": "/img/covers/tt-mackab.jpg",
+        "url": "",
+        "title": "Elevator Sound",
+        "desc": "Synth Event",
+        "thumbnail": "/img/covers/tt-event.jpg",
         "posted_at": "2023-08-27T18:01:22Z"
     },{
         "platform": "releases",
@@ -92,8 +85,14 @@
         "desc": "Night of the Vampire RMX",
         "thumbnail": "/img/covers/notv.jpg",
         "posted_at": "2022-12-16T18:23:50Z"
-    },
-    {
+    },{
+        "platform": "tiktok",
+        "url": "",
+        "title": "Macka B",
+        "desc": "Dropping Knowledge",
+        "thumbnail": "/img/covers/tt-mackab.jpg",
+        "posted_at": "2023-08-27T18:01:22Z"
+    },{
         "platform": "death-pop",
         "url": "https:\/\/www.youtube.com\/watch?v=kX9UzWUYrG8",
         "title": "ET",
@@ -124,8 +123,14 @@
         "desc": "Night of the Vampire RMX",
         "thumbnail": "/img/covers/notv.jpg",
         "posted_at": "2022-07-28T22:58:00Z"
-    },
-    {
+    },{
+        "platform": "tiktok",
+        "url": "",
+        "title": "Russian Kids",
+        "desc": "Dance Moves",
+        "thumbnail": "/img/covers/tt-russian.jpg",
+        "posted_at": "2023-08-27T18:01:22Z"
+    },{
         "platform": "mixes",
         "url": "https:\/\/www.mixcloud.com\/notv\/productivity-5\/",
         "title": "Productivity 5",

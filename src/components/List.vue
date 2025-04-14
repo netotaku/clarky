@@ -69,6 +69,10 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 
+    @media (max-width: 600px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .card{
         line-height: 1.5;
         margin-top: -22px;
@@ -152,7 +156,10 @@
         padding-top: 300px;     
         background-image: url('/hero.jpeg');
         background-size: cover;
-        background-position: center bottom;  
+        background-position: center bottom; 
+        @media (max-width: 600px) {
+            padding-top: 260px; 
+        } 
         .label{
             display: block;
             padding-bottom: 6px;
