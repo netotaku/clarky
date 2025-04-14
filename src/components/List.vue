@@ -158,7 +158,7 @@
         background-size: cover;
         background-position: center bottom; 
         @media (max-width: 600px) {
-            padding-top: 260px; 
+            padding-top: 86vw; 
         } 
         .label{
             display: block;
