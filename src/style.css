@@ -1,0 +1,15 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html{
+  background: #333;
+  color: #ccc;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.section{
+  padding: 22px;
+}

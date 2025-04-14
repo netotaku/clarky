@@ -1,0 +1,23 @@
+[
+    {
+      "slug": "/",
+      "label": "Everything"
+    },
+    {
+        "slug": "/releases",
+        "label": "Releases"
+    },
+    {
+        "slug": "/tiktok",
+        "label": "TikToks"
+    },
+    {
+      "slug": "/mixes",
+      "label": "Mixes"
+    },
+    {
+      "slug": "/death-pop",
+      "label": "Death Pop"
+    }
+  ]
+  
