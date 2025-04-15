@@ -75,8 +75,8 @@
             
             position: relative;
             overflow: hidden;
-            border-top-left-radius: var(--global-padding);
-            border-top-right-radius: var(--global-padding);            
+            border-top-left-radius: var(--global-padding, 14px);
+            border-top-right-radius: var(--global-padding, 14px);            
             padding-bottom: 32px; 
             
             &:hover{
