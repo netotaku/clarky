@@ -9,7 +9,7 @@
                 <li><a target="_blank" href="https://www.tiktok.com/@clar.ky">TikTok</a></li>
             </ul>
         </nav> 
-        <span class="made">&copy; Copyright 2025. Bristol, UK</span>          
+        <span class="made"><router-link to="/cookies">Cookies</router-link> / &copy; Copyright 2025. Bristol, UK.</span>          
     </footer>
 </template>
 
@@ -19,22 +19,27 @@
 
 <style lang="scss" scoped>
 
-    .brand{
-        
-        width: 200px;
-        z-index: 1;
-       
-        right: var(--global-padding);
-    }
-
     .footer{
         position: relative;
-        display: flex;
-        justify-content: space-between;
+
         background: #222;
-        .made{
-            align-self: flex-end;
-            // padding-top: var(--global-padding);
+
+        @media (min-width: 600px) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .made{   
+            display: block;         
+            @media (max-width: 600px) {            
+                padding-top: var(--global-padding);
+            }
+            a{
+                color: inherit;
+                &:hover{
+                    text-decoration: none;
+                }
+            }
         }
         nav{
             ul{
@@ -44,14 +49,15 @@
                 }
                 list-style-type: none;
                 font-weight: bold;
-
-                li{
+                line-height: 1.3;
+                li{                    
                     a{
                         color: white;
                         text-decoration: none;
                         &:hover{
                             color: #f90;
                         }
+                        font-size: 18px;                        
                     }
                 }
             }

@@ -1,24 +1,78 @@
 <template>
-    <header></header>
-    <!-- <header class="hero section">
-        <img class="brand" src="/notv-brand.png" />
-    </header> -->
+  <section class="hero section">     
+        <nav>
+            <p class="label">About</p>
+            <ul>
+                <li>
+                    <router-link to="/bio" :class="{ active: route.path === '/bio' }">Bio</router-link></li>
+                <li>
+                    <a target="_blank" href="https://supply.teemill.com/product/night-of-the-vampire-boyfriend-t-shirt/">Merch</a></li>
+            </ul>
+        </nav>   
+        <nav>
+            <p class="label">Playlists</p>
+            <ul>
+                <li v-for="item in sitemap" :key="item.slug">
+                    <router-link :to="item.slug" :class="{ active: route.path === item.slug }">
+                        {{ item.label }}</router-link>
+                </li>
+            </ul>
+        </nav>
+    </section>
 </template>
   
 <script lang="ts" setup>
-  /* No props or logic yet */
+    import { useRoute } from 'vue-router'
+    const route = useRoute()
+    import sitemap from '@/data/categories.json'
 </script>
 
 <style lang="scss" scoped>
+    nav {
+
+        padding-bottom: 22px;
+
+        ul{
+            list-style-type: none;
+            li{            
+                a{
+                    display: block;
+                    text-decoration: none;
+                    color: white;
+                    font-weight: bold;
+                    font-size: 32px;
+                    letter-spacing: -1px;
+                    &:hover, &.active{
+                        padding-left: 10px;
+                    }
+                    &:hover{
+                        border-left: solid 8px purple;
+                    } 
+                    &.active{                    
+                        border-left: solid 8px #f90;
+                    }
+                }
+            }
+        }
+    }
+
     .hero {
+        position: relative;
         width: 100%;
-        // height: 75vh;        
-        background-image: url('/hero.jpeg');
+        padding-top: 380px;     
+        background-image: url('/img/hero.jpg');
         background-size: cover;
-        background-position: center bottom;        
+        background-position: center bottom; 
+        // display: flex;        
+        @media (max-width: 600px) {
+            padding-top: 160px; 
+            background-position: -390px bottom;
+            background-size: 1200px;            
+        } 
+        .label{
+            display: block;
+            padding-bottom: 6px;
+        }      
     }
-    .brand{
-        width: 180px;
-        height: auto;
-    }
+
 </style>

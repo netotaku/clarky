@@ -1,19 +1,13 @@
 <script setup lang="ts">
   import Hero from './components/Hero.vue'
-  import List from './components/List.vue'
   import Footer from './components/Footer.vue'
+  import { RouterView } from 'vue-router'
 </script>
 
 <template>
   <article>
     <Hero />
-    <List />
+    <RouterView />
     <Footer />
   </article>
 </template>
-
-<style scoped>
-  article{
-
-  }
-</style>

@@ -1,23 +1,9 @@
-<template>
-        
-    <section class="hero section">        
-        <nav>
-            <p class="label">Playlists</p>
-            <ul>
-                <li v-for="item in sitemap" :key="item.slug">
-                    <router-link :to="item.slug" :class="{ active: route.path === item.slug }">
-                        {{ item.label }}</router-link>
-                </li>
-            </ul>
-        </nav>
-    </section>
-      
-  
-      <div class="cards">
+<template>        
+    <div class="cards">
         <div
-          v-for="(item, index) in filteredItems"
-          :key="index"
-          class="card">
+            v-for="(item, index) in filteredItems"
+            :key="index"
+            class="card">
 
             <a :href="item.url" target="_blank" rel="noopener">
                 <img :src="item.thumbnail" :alt="item.title" />
@@ -28,8 +14,7 @@
             </a>
 
         </div>
-      </div>
-    
+    </div>
 </template>
   
 <script lang="ts" setup>
@@ -39,7 +24,6 @@
 
     import { useRoute } from 'vue-router'
     const route = useRoute()
-    import sitemap from '@/data/sitemap.json'
   
     interface MediaItem {
         url: string
@@ -130,59 +114,6 @@
         }
     }
   }
-
-    nav{
-
-    padding-bottom: 22px;
-    // padding-right: 44px;
-    ul{
-        list-style-type: none;
-        li{
-            a{
-                display: block;
-                text-decoration: none;
-                color: white;
-                font-weight: bold;
-                font-size: 32px;
-                letter-spacing: -1px;
-                &:hover, &.active{
-                    padding-left: 10px;
-                }
-                &:hover{
-                    border-left: solid 8px purple;
-                } 
-                &.active{                    
-                    border-left: solid 8px #f90;
-                }
-                
-            }
-        }
-    }
-  }
-
-  .hero {
-        position: relative;
-        width: 100%;
-        padding-top: 380px;     
-         background-image: url('/img/hero.jpg');
-        background-size: cover;
-        background-position: center bottom; 
-        // display: flex;        
-        @media (max-width: 600px) {
-            padding-top: 160px; 
-            background-position: -290px bottom;
-            background-size: auto;
-        } 
-        .label{
-            display: block;
-            padding-bottom: 6px;
-        }      
-    }
-    .brand{
-        width: 180px;
-        height: auto;
-    }
-
 
 </style>
   
