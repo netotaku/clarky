@@ -29,6 +29,7 @@
             font-size: 32px;
             padding: var(--global-padding);
             background: #222;
+            letter-spacing: -1px;
         }
     }
 

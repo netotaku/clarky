@@ -68,7 +68,10 @@
             padding-top: 160px; 
             background-position: -390px bottom;
             background-size: 1200px;            
-        } 
+        }
+        @media (max-width: 320px) {            
+            background-position: -477px bottom;                     
+        }  
         .label{
             display: block;
             padding-bottom: 6px;
