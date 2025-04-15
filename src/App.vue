@@ -5,11 +5,15 @@
 </script>
 
 <template>
-  <Hero />
-  <List />
-  <Footer />
+  <article>
+    <Hero />
+    <List />
+    <Footer />
+  </article>
 </template>
 
 <style scoped>
-
+  article{
+    max-width: 988px;
+  }
 </style>

@@ -1,16 +1,8 @@
 <template>
     <footer class="footer section">
-        <ul class="nav">
-            <li><a target="_blank" href="https://soundcloud.com/death-pop">Soundcloud</a></li>
-            <li><a target="_blank" href="https://www.mixcloud.com/notv/">Mixcloud</a></li>
-            <li><a target="_blank" href="https://www.instagram.com/night.of.the.vampire/">Instagram</a></li>
-            <li><a target="_blank" href="https://www.threads.net/@clar.ky">Threads</a></li>
-            <li><a target="_blank" href="https://www.tiktok.com/@clar.ky">TikTok</a></li>
-        </ul>
-        <p class="made">Copyright 2025, Bristol UK</p>
+        <span class="made">Copyright 2025, Bristol UK</span>                
     </footer>
 </template>
-
 
 <script lang="ts" setup>
   /* No props or logic yet */
@@ -18,12 +10,22 @@
 
 <style lang="scss" scoped>
 
+    .brand{
+        
+        width: 200px;
+        z-index: 1;
+       
+        right: var(--global-padding);
+    }
+
     .footer{
         position: relative;
-        background: #111;        
-        color: #555;
+        // background: #111;        
+       // color: #222;
+        display: flex;
+        justify-content: space-between;
         .made{
-            padding-top: var(--global-padding);;
+            // padding-top: var(--global-padding);
         }
         .nav{
             list-style-type: none;

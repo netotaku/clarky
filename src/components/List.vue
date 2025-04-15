@@ -1,8 +1,8 @@
 <template>
         
-    <section class="hero section">
-        <p class="label">Playlists</p>
-        <nav class="platform-nav">
+    <section class="hero section">        
+        <nav>
+            <p class="label">Playlists</p>
             <ul>
                 <li v-for="item in sitemap" :key="item.slug">
                     <router-link :to="item.slug" :class="{ active: route.path === item.slug }">
@@ -10,6 +10,16 @@
                 </li>
             </ul>
         </nav>
+        <!-- <nav>
+            <p class="label">Socials</p>
+            <ul>
+                <li><a target="_blank" href="https://soundcloud.com/death-pop">Soundcloud</a></li>
+                <li><a target="_blank" href="https://www.mixcloud.com/notv/">Mixcloud</a></li>
+                <li><a target="_blank" href="https://www.instagram.com/night.of.the.vampire/">Instagram</a></li>
+                <li><a target="_blank" href="https://www.threads.net/@clar.ky">Threads</a></li>
+                <li><a target="_blank" href="https://www.tiktok.com/@clar.ky">TikTok</a></li>
+            </ul>
+        </nav> -->
     </section>
       
   
@@ -93,13 +103,20 @@
             overflow: hidden;
             border-top-left-radius: var(--global-padding);
             border-top-right-radius: var(--global-padding);            
-            padding-bottom: 32px;  
+            padding-bottom: 32px; 
+            
             &:hover{
                 background: purple;
                 * {
                     color: white;
                 }
-            }          
+                img{
+                    // transform: scale(1.05);
+                }
+            } 
+            &:not(:hover){
+                // transform: scale(1);
+            }         
         }
         h3 {
             margin: 0px;                                 
@@ -118,13 +135,16 @@
             width: 100%;
             object-fit: cover;
             aspect-ratio: 1 / 1;
+            transition: transform 0.2s ease-in-out;
+            will-change: transform;
         }
     }
   }
 
-  .platform-nav{
+    nav{
 
     padding-bottom: 22px;
+    // padding-right: 44px;
     ul{
         list-style-type: none;
         li{
@@ -154,12 +174,14 @@
         position: relative;
         width: 100%;
         padding-top: 300px;     
-        background-image: url('/hero.jpeg');
+         background-image: url('/hero.jpeg');
         background-size: cover;
         background-position: center bottom; 
+        // display: flex;        
         @media (max-width: 600px) {
-            padding-top: 86vw; 
-            background-position: -47vw bottom;
+            padding-top: 160px; 
+            background-position: -290px bottom;
+            background-size: auto;
         } 
         .label{
             display: block;
