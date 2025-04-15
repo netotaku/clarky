@@ -14,6 +14,6 @@
 
 <style scoped>
   article{
-    max-width: 988px;
+
   }
 </style>
