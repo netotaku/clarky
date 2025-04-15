@@ -10,16 +10,6 @@
                 </li>
             </ul>
         </nav>
-        <!-- <nav>
-            <p class="label">Socials</p>
-            <ul>
-                <li><a target="_blank" href="https://soundcloud.com/death-pop">Soundcloud</a></li>
-                <li><a target="_blank" href="https://www.mixcloud.com/notv/">Mixcloud</a></li>
-                <li><a target="_blank" href="https://www.instagram.com/night.of.the.vampire/">Instagram</a></li>
-                <li><a target="_blank" href="https://www.threads.net/@clar.ky">Threads</a></li>
-                <li><a target="_blank" href="https://www.tiktok.com/@clar.ky">TikTok</a></li>
-            </ul>
-        </nav> -->
     </section>
       
   
@@ -173,8 +163,8 @@
   .hero {
         position: relative;
         width: 100%;
-        padding-top: 300px;     
-         background-image: url('/hero.jpeg');
+        padding-top: 440px;     
+         background-image: url('/img/hero.jpg');
         background-size: cover;
         background-position: center bottom; 
         // display: flex;        
