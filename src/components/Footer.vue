@@ -31,7 +31,7 @@
         position: relative;
         display: flex;
         justify-content: space-between;
-        background: #444;
+        background: #222;
         .made{
             align-self: flex-end;
             // padding-top: var(--global-padding);

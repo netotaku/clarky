@@ -163,7 +163,7 @@
   .hero {
         position: relative;
         width: 100%;
-        padding-top: 440px;     
+        padding-top: 380px;     
          background-image: url('/img/hero.jpg');
         background-size: cover;
         background-position: center bottom; 
