@@ -20,6 +20,7 @@
         :desc="activeItem.desc"
         :thumbnail="activeItem.thumbnail"
         :url="activeItem.url"
+        :source="activeItem.source"
     />
 </template>
   

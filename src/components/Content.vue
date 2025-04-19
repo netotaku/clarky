@@ -6,8 +6,8 @@
     import { ref, onMounted, watch } from 'vue'
 
     const props = defineProps<{
-    path: string
-    title?: string
+        path: string
+        title?: string
     }>()
 
     const html = ref('')
