@@ -1,11 +1,10 @@
 <template>        
     <div class="cards">
-        <div
-            v-for="(item, index) in filteredItems"
-            :key="index"
-            class="card">
-
-            <a :href="item.url" target="_blank" rel="noopener">
+        <div 
+            v-for="item in filteredItems" 
+            :key="item.url" 
+            :class="['card', { selected: activeItem?.url === item.url }]">
+            <a :href="item.url" target="_blank" rel="noopener"  @click.prevent="openPlayer(item)">
                 <img :src="item.thumbnail" :alt="item.title" />
                 <div class="card__desc">
                     <small>{{ item.platform }}</small>
@@ -15,6 +14,13 @@
 
         </div>
     </div>
+    <MediaPlayer
+        v-if="activeItem"
+        :title="activeItem.title"
+        :desc="activeItem.desc"
+        :thumbnail="activeItem.thumbnail"
+        :url="activeItem.url"
+    />
 </template>
   
 <script lang="ts" setup>
@@ -24,6 +30,13 @@
 
     import { useRoute } from 'vue-router'
     const route = useRoute()
+
+    import MediaPlayer from '@/components/MediaPlayer.vue'
+    const activeItem = ref<MediaItem | null>(null)
+
+    const openPlayer = (item: MediaItem) => {
+        activeItem.value = item
+    }
   
     interface MediaItem {
         url: string
@@ -32,6 +45,7 @@
         desc: string
         platform: string
         posted_at: string
+        source: string
     }
   
     const items = ref(media as MediaItem[])
@@ -61,6 +75,19 @@
         line-height: 1.5;
         margin-top: -22px;
 
+        transition: margin-top 0.3s ease;
+
+        &.selected, 
+        &:hover{
+            margin-top: -44px; 
+            a{
+                background: purple;
+                * {
+                    color: white;
+                }
+            }
+        }
+
         &__desc{
             padding: var(--global-padding);
         }
@@ -78,19 +105,7 @@
             border-top-left-radius: 22px;
             border-top-right-radius: 22px;            
             padding-bottom: 32px; 
-            
-            &:hover{
-                background: purple;
-                * {
-                    color: white;
-                }
-                img{
-                    // transform: scale(1.05);
-                }
-            } 
-            &:not(:hover){
-                // transform: scale(1);
-            }         
+      
         }
         h3 {
             margin: 0px;                                 

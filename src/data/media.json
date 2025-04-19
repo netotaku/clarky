@@ -1,33 +1,29 @@
 [
     
     {
-        "platform": "tiktok",
-        "url": "https://www.tiktok.com/@clar.ky/video/7425042106592415009",
-        "title": "Machina Bristol",
-        "desc": "The coffee was excellent",
-        "thumbnail": "/img/covers/tt-event.jpg",
-        "posted_at": "2023-08-27T18:01:22Z"
-    },{
         "platform": "releases",
         "url": "https://soundcloud.com/funspongerecords/1-night-of-the-vampire-talk-talk?in=funspongerecords%2Fsets%2Ffun-sponge-records-2nd-birthday-compilation",
         "title": "Talk Talk",
         "desc": "Night of the Vampire (FSR)",
         "thumbnail": "/img/covers/fs.jpeg",
-        "posted_at": "2023-08-27T18:01:22Z"
+        "posted_at": "2023-08-27T18:01:22Z",
+        "source": "soundcloud"
     },{
         "platform": "releases",
-        "url": "https://open.spotify.com/track/4635ilQgwHoSbxH5ZyGtDG?si=2ff1eefb5fa840d4",
+        "url": "https://soundcloud.com/interstellar_audio/subrix-be-mine-notv-rmx",
         "title": "Subrix, Be Mine",
         "desc": "Night of the Vampire Remix (IA)",
         "thumbnail": "/img/covers/front.jpg",
-        "posted_at": "2023-08-27T18:01:22Z"
+        "posted_at": "2023-08-27T18:01:22Z",
+        "source": "soundcloud"
     },{
         "platform": "mixes",
         "url": "https:\/\/www.mixcloud.com\/notv\/productivity-10-ujjayi-beats\/",
         "title": "Productivity 10",
         "desc": "Ujjayi Beats",
         "thumbnail": "https:\/\/thumbnailer.mixcloud.com\/unsafe\/300x300\/extaudio\/d\/4\/3\/4\/6c17-69b3-44e5-a03c-9dab7f437c7f",
-        "posted_at": "2023-08-27T18:01:22Z"
+        "posted_at": "2023-08-27T18:01:22Z",
+        "source": "mixcloud"
     },
     {
         "platform": "mixes",
@@ -35,7 +31,8 @@
         "title": "Productivity 9",
         "desc": "Trip Hop Retrospective",
         "thumbnail": "https:\/\/thumbnailer.mixcloud.com\/unsafe\/300x300\/extaudio\/7\/9\/b\/8\/1c58-bcde-4f90-8f08-3e62a888f823",
-        "posted_at": "2023-04-20T21:04:12Z"
+        "posted_at": "2023-04-20T21:04:12Z",
+        "source": "mixcloud"
     },
     {
         "platform": "mixes",
@@ -43,7 +40,8 @@
         "title": "Productivity 6",
         "desc": "Garage, Breakbeat, Bass House",
         "thumbnail": "https:\/\/thumbnailer.mixcloud.com\/unsafe\/300x300\/extaudio\/2\/5\/9\/5\/4f10-c576-4e39-8c67-fe7fc6a09eef",
-        "posted_at": "2023-04-10T17:01:20Z"
+        "posted_at": "2023-04-10T17:01:20Z",
+        "source": "mixcloud"
     },
     {
         "platform": "mixes",
@@ -51,7 +49,8 @@
         "title": "Productivity 7",
         "desc": "Hip Hop Mini Mix",
         "thumbnail": "https:\/\/thumbnailer.mixcloud.com\/unsafe\/300x300\/extaudio\/1\/e\/8\/0\/609e-7f13-424e-b578-0404047b2ccc",
-        "posted_at": "2023-04-08T11:51:22Z"
+        "posted_at": "2023-04-08T11:51:22Z",
+        "source": "mixcloud"
     },
     {
         "platform": "mixes",
@@ -59,7 +58,8 @@
         "title": "Productivity 8",
         "desc": "Breaks Mini Mix",
         "thumbnail": "https:\/\/thumbnailer.mixcloud.com\/unsafe\/300x300\/extaudio\/9\/f\/2\/e\/1e4c-d5d3-40ea-a015-69ca724d4e90",
-        "posted_at": "2023-03-30T18:30:40Z"
+        "posted_at": "2023-03-30T18:30:40Z",
+        "source": "mixcloud"
     },
     {
         "platform": "death-pop",
@@ -67,7 +67,8 @@
         "title": "Shutdown",
         "desc": "Night of the Vampire RMX",
         "thumbnail": "/img/covers/notv.jpg",
-        "posted_at": "2023-01-02T20:44:38Z"
+        "posted_at": "2023-01-02T20:44:38Z",
+        "source": "youtube"        
     },
     {
         "platform": "death-pop",
@@ -75,7 +76,8 @@
         "title": "Diamonds",
         "desc": "Night of the Vampire RMX",
         "thumbnail": "/img/covers/notv.jpg",
-        "posted_at": "2022-12-31T19:01:42Z"
+        "posted_at": "2022-12-31T19:01:42Z",
+        "source": "youtube"
     },
     {
         "platform": "death-pop",
@@ -83,29 +85,24 @@
         "title": "Don't Stop The Music",
         "desc": "Night of the Vampire RMX",
         "thumbnail": "/img/covers/notv.jpg",
-        "posted_at": "2022-12-16T18:23:50Z"
-    },{
-        "platform": "tiktok",
-        "url": "https://www.tiktok.com/@clar.ky/video/7490872467356110102",
-        "title": "Macka B",
-        "desc": "Dropping Knowledge",
-        "thumbnail": "/img/covers/tt-mackab.jpg",
-        "posted_at": "2023-08-27T18:01:22Z"
+        "posted_at": "2022-12-16T18:23:50Z",
+        "source": "youtube"
     },{
         "platform": "death-pop",
         "url": "https:\/\/www.youtube.com\/watch?v=kX9UzWUYrG8",
         "title": "ET",
         "desc": "Night of the Vampire RMX",
         "thumbnail": "/img/covers/notv.jpg",
-        "posted_at": "2022-08-20T10:16:19Z"
-    },
-    {
+        "posted_at": "2022-08-20T10:16:19Z",
+        "source": "youtube"
+    },{
         "platform": "death-pop",
         "url": "https:\/\/www.youtube.com\/watch?v=X-EG43dec_4",
         "title": "My Lovin",        
         "desc": "Night of the Vampire RMX",
         "thumbnail": "/img/covers/notv.jpg",
-        "posted_at": "2022-08-13T10:07:26Z"
+        "posted_at": "2022-08-13T10:07:26Z",
+        "source": "youtube"
     },
     {
         "platform": "death-pop",
@@ -113,7 +110,8 @@
         "title": "Freak Like Me",
         "desc": "Night of the Vampire RMX",
         "thumbnail": "/img/covers/notv.jpg",
-        "posted_at": "2022-07-28T23:43:07Z"
+        "posted_at": "2022-07-28T23:43:07Z",
+        "source": "youtube"
     },
     {
         "platform": "death-pop",
@@ -121,21 +119,16 @@
         "title": "Just Dance",
         "desc": "Night of the Vampire RMX",
         "thumbnail": "/img/covers/notv.jpg",
-        "posted_at": "2022-07-28T22:58:00Z"
-    },{
-        "platform": "tiktok",
-        "url": "https://www.tiktok.com/@clar.ky/video/7481997664687508758",
-        "title": "Russian Kids",
-        "desc": "Dance Moves",
-        "thumbnail": "/img/covers/tt-russian.jpg",
-        "posted_at": "2023-08-27T18:01:22Z"
+        "posted_at": "2022-07-28T22:58:00Z",
+        "source": "youtube"
     },{
         "platform": "mixes",
         "url": "https:\/\/www.mixcloud.com\/notv\/productivity-5\/",
         "title": "Productivity 5",
         "desc": "Trip Hop",
         "thumbnail": "https:\/\/thumbnailer.mixcloud.com\/unsafe\/300x300\/extaudio\/6\/f\/6\/b\/5985-7718-495d-a019-45be1abba419",
-        "posted_at": "2010-09-25T11:05:11Z"
+        "posted_at": "2010-09-25T11:05:11Z",
+        "source": "mixcloud"
     },
     {
         "platform": "mixes",
@@ -143,7 +136,8 @@
         "title": "Productivity 4",
         "desc": "Big Beat Retrospective",
         "thumbnail": "https:\/\/thumbnailer.mixcloud.com\/unsafe\/300x300\/extaudio\/5\/7\/1\/f\/bf3d-11f9-4fb8-be1c-27cf77eb37c8",
-        "posted_at": "2010-08-20T09:34:15Z"
+        "posted_at": "2010-08-20T09:34:15Z",
+        "source": "mixcloud"
     },
     {
         "platform": "mixes",
@@ -151,7 +145,8 @@
         "title": "Productivity 3",
         "desc": "Electronica",
         "thumbnail": "https:\/\/thumbnailer.mixcloud.com\/unsafe\/300x300\/extaudio\/5\/d\/1\/3\/2378-f937-4c8c-9a8c-ab0540f87c84",
-        "posted_at": "2010-02-14T01:40:32Z"
+        "posted_at": "2010-02-14T01:40:32Z",
+        "source": "mixcloud"
     },
     {
         "platform": "mixes",
@@ -159,7 +154,8 @@
         "title": "Productivity 1",
         "desc": "Electronica",
         "thumbnail": "https:\/\/thumbnailer.mixcloud.com\/unsafe\/300x300\/extaudio\/4\/b\/d\/c\/afef-065f-41fb-9c4a-5f2dedef1f86",
-        "posted_at": "2010-02-05T02:23:36Z"
+        "posted_at": "2010-02-05T02:23:36Z",
+        "source": "mixcloud"
     },
     {
         "platform": "mixes",
@@ -167,6 +163,7 @@
         "title": "Productivity 2",
         "desc": "Electronica",
         "thumbnail": "https:\/\/thumbnailer.mixcloud.com\/unsafe\/300x300\/extaudio\/1\/6\/a\/0\/b7fd-aaa5-4e53-90a7-746e88779ba8",
-        "posted_at": "2010-02-05T01:53:21Z"
+        "posted_at": "2010-02-05T01:53:21Z",
+        "source": "mixcloud"
     }
 ]
