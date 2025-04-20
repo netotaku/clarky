@@ -19,53 +19,16 @@
 </template>
   
 <script setup lang="ts">
-    import { computed, watch, ref, onMounted } from 'vue'
+    import { computed, watch, ref } from 'vue'
     import { playerState } from '@/stores/playerState'
     import { useMediaPlayer } from '@/components/players/useMediaPlayer'
 
     const track = computed(() => playerState.currentTrack)
 
-    const media = ref<any>(null)
+    const media = useMediaPlayer("", "", "")
 
     const playerElementId = 'media-player'
 
-    watch(track, (newTrack, oldTrack) => {
-      if (!newTrack?.url || !newTrack?.source) return
-
-      // If no player exists yet, init
-      if (!media.value) {
-        media.value = useMediaPlayer(newTrack.source, newTrack.url, 'media-player')
-        media.value.initPlayer()
-      }
-
-      // If player exists and track changed, load new video
-      else if (newTrack.url !== oldTrack?.url) {
-        media.value.loadNewTrack?.(newTrack.url)
-      }
-    }, { immediate: true })
-
-    //////////
-
-    // const props = defineProps<{
-    //     title: string
-    //     desc?: string
-    //     thumbnail: string
-    //     url: string
-    //     source: string
-    // }>()    
-
-    
-    // const media = useMediaPlayer(props.source, props.url, playerElementId)
-
-    // onMounted(() => {
-    //   media.initPlayer()      
-    // })
-
-    // watch(() => props.url, (newUrl) => {
-    //   if (props.source === 'youtube' && media.loadOrSwitchVideo) {
-    //     media.loadOrSwitchVideo(newUrl)
-    //   }
-    // })
   </script>
   
   
@@ -73,8 +36,6 @@
 
 
     .player {
-
-
 
       .play{
           height: 90px;
@@ -88,7 +49,6 @@
               background: #f90;
           }
       }
-
 
       .thumb{
           height: 90px;
@@ -141,8 +101,6 @@
           }
       }
     }
-    
-
     
     .progress {
       position: relative;
