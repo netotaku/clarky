@@ -1,7 +1,7 @@
 <template>
     <div :id="playerElementId" class="iframe" style="display: none"></div>
     <div v-if="track" class="player">
-        <div class="play" @click="media.togglePlay">{{ media.isPlaying ? 'Pause' : 'Play' }}</div>
+        <div class="play" @click="media.togglePlay">{{ media.isPlaying ? 'Pause' : '&#9654;' }}</div>
         <div class="track">
 
             <div class="title">
@@ -18,22 +18,18 @@
     </div>
 </template>
   
-<script setup lang="ts">
-    import { computed, watch, ref } from 'vue'
+  <script setup lang="ts">
+    import { computed } from 'vue'
     import { playerState } from '@/stores/playerState'
     import { useMediaPlayer } from '@/components/players/useMediaPlayer'
 
     const track = computed(() => playerState.currentTrack)
-
     const media = useMediaPlayer("", "", "")
-
     const playerElementId = 'media-player'
-
   </script>
   
   
   <style scoped lang="scss">
-
 
     .player {
 
@@ -44,6 +40,7 @@
           align-items: center;
           justify-content: center;
           background: rgba(255,255,255, .2);
+          font-size: 32px;
           cursor: pointer;
           &:hover{
               background: #f90;
