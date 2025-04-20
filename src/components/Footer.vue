@@ -21,7 +21,7 @@
 
     .footer{
         position: relative;
-
+        height: 180px;
         background: #222;
 
         @media (min-width: 600px) {
@@ -43,13 +43,15 @@
         }
         nav{
             ul{
+                list-style-type: none;
+                font-weight: bold;
+                line-height: 1.3;
+
                 @media (min-width: 600px) {
                     display: flex;
                     gap: 10px;
                 }
-                list-style-type: none;
-                font-weight: bold;
-                line-height: 1.3;
+
                 li{                    
                     a{
                         color: white;

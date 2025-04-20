@@ -31,7 +31,8 @@ export function useMediaPlayer(source: string, url: string, playerId: string) {
     seekTo: () => {},
     initPlayer: () => {},
     formatTime: () => {},
+    loadNewTrack: () => {},
     formattedCurrentTime: "00:00",
-    formattedDuration: "00:00"
+    formattedDuration: "00:00", 
   }
 }

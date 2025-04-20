@@ -4,7 +4,7 @@
             v-for="item in filteredItems" 
             :key="item.url" 
             :class="['card', { selected: activeItem?.url === item.url }]">
-            <a :href="item.url" target="_blank" rel="noopener"  @click.prevent="openPlayer(item)">
+            <a :href="item.url" target="_blank" rel="noopener"  @click.prevent="playTrack(item)">
                 <img :src="item.thumbnail" :alt="item.title" />
                 <div class="card__desc">
                     <small>{{ item.platform }}</small>
@@ -14,14 +14,6 @@
 
         </div>
     </div>
-    <MediaPlayer
-        v-if="activeItem"
-        :title="activeItem.title"
-        :desc="activeItem.desc"
-        :thumbnail="activeItem.thumbnail"
-        :url="activeItem.url"
-        :source="activeItem.source"
-    />
 </template>
   
 <script lang="ts" setup>
@@ -32,11 +24,16 @@
     import { useRoute } from 'vue-router'
     const route = useRoute()
 
-    import MediaPlayer from '@/components/MediaPlayer.vue'
-    const activeItem = ref<MediaItem | null>(null)
+    import { playerState } from '@/stores/playerState'
 
-    const openPlayer = (item: MediaItem) => {
-        activeItem.value = item
+    function playTrack(item: MediaItem) {
+        playerState.currentTrack = {
+            title: item.title,
+            desc: item.desc,
+            url: item.url,
+            thumbnail: item.thumbnail,
+            source: item.source
+        }
     }
   
     interface MediaItem {

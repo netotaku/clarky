@@ -1,53 +1,76 @@
 <template>
-    <div :id="playerElementId" class="iframe" style="display: none;"></div>
-    <div class="player">
-        <div class="play" @click="media.togglePlay">{{ media.isPlaying.value ? 'Pause' : 'Play' }}</div>
+    <div :id="playerElementId" class="iframe" style="display: none"></div>
+    <div v-if="track" class="player">
+        <div class="play" @click="media.togglePlay">{{ media.isPlaying ? 'Pause' : 'Play' }}</div>
         <div class="track">
 
             <div class="title">
-                <a :href="url"><strong>{{ title }}</strong> / {{ desc }}</a>
+                <a :href="track.url" target="_blank"><strong>{{ track.title }}</strong> / {{ track.desc }}</a>
                 <span class="time">{{ media.formattedCurrentTime }} / {{ media.formattedDuration }}</span>
             </div> 
 
             <div class="progress">
-              <div class="fill" :style="{ width: media.progressPercent.value + '%' }"></div>
+              <div class="fill" :style="{ width: media.progressPercent + '%' }"></div>
             </div>
 
         </div>
-        <img :src="thumbnail" alt="Track thumbnail" class="thumb" />
+        <img :src="track.thumbnail" alt="Track thumbnail" class="thumb" />
     </div>
 </template>
   
 <script setup lang="ts">
-    import { onMounted, watch } from 'vue'
+    import { computed, watch, ref, onMounted } from 'vue'
+    import { playerState } from '@/stores/playerState'
     import { useMediaPlayer } from '@/components/players/useMediaPlayer'
-    
-    const props = defineProps<{
-        title: string
-        desc?: string
-        thumbnail: string
-        url: string
-        source: string
-    }>()    
+
+    const track = computed(() => playerState.currentTrack)
+
+    const media = ref<any>(null)
 
     const playerElementId = 'media-player'
-    const media = useMediaPlayer(props.source, props.url, playerElementId)
 
-    onMounted(() => {
-      media.initPlayer()      
-    })
+    watch(track, (newTrack) => {
 
-    watch(() => props.url, (newUrl) => {
-      if (props.source === 'youtube' && media.loadOrSwitchVideo) {
-        media.loadOrSwitchVideo(newUrl)
+      console.log('track.source:', track.value?.source)
+      
+      if (newTrack?.url && newTrack?.source) {  
+        console.log('useMediaPlayer called with:', newTrack.source)      
+        media.value = useMediaPlayer(newTrack.source, newTrack.url, 'media-player')
+        media.value.initPlayer()
       }
-    })
+    }, { immediate: true })
+
+    //////////
+
+    // const props = defineProps<{
+    //     title: string
+    //     desc?: string
+    //     thumbnail: string
+    //     url: string
+    //     source: string
+    // }>()    
+
+    
+    // const media = useMediaPlayer(props.source, props.url, playerElementId)
+
+    // onMounted(() => {
+    //   media.initPlayer()      
+    // })
+
+    // watch(() => props.url, (newUrl) => {
+    //   if (props.source === 'youtube' && media.loadOrSwitchVideo) {
+    //     media.loadOrSwitchVideo(newUrl)
+    //   }
+    // })
   </script>
   
   
   <style scoped lang="scss">
 
+
     .player {
+
+
 
       .play{
           height: 90px;

@@ -72,6 +72,7 @@ function loadOrSwitchVideo(newUrl: string) {
   
 
   function initPlayer() {
+    console.log("initPlayer")
     const videoId = getYouTubeId(videoUrl)
     if (!videoId || !window.YT || !window.YT.Player) return
 
