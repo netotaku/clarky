@@ -46,7 +46,7 @@
                         padding-left: 10px;
                     }
                     &:hover{
-                        border-left: solid 8px purple;
+                        border-left: solid 8px #f60;
                     } 
                     &.active{                    
                         border-left: solid 8px #f90;

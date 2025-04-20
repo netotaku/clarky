@@ -3,9 +3,12 @@
         <div 
             v-for="item in filteredItems" 
             :key="item.url" 
-            :class="['card', { selected: activeItem?.url === item.url }]">
+            :class="['card', { selected: playerState.currentTrack?.url === item.url }]">
             <a :href="item.url" target="_blank" rel="noopener"  @click.prevent="playTrack(item)">
-                <img :src="item.thumbnail" :alt="item.title" />
+                <div class="cover">
+                    <img :src="item.thumbnail" :alt="item.title" />
+                    <span class="label">Playing</span>
+                </div>
                 <div class="card__desc">
                     <small>{{ item.platform }}</small>
                     <h3><strong>{{ item.title }}</strong><br />{{ item.desc }}</h3>                        
@@ -60,6 +63,20 @@
   
 <style lang="scss" scoped>
 
+    .label{
+        display: none;
+        padding: 6px 12px;
+        background: #f60;
+        color: white;
+        font-weight: bold;
+        font-size: 12px;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        overflow: hidden;
+        border-bottom-left-radius: 8px;        
+    }
+
   .cards{
 
     display: grid;
@@ -79,10 +96,17 @@
         &:hover{
             margin-top: -44px; 
             a{
-                background: purple;
+                background: #f60;
                 * {
                     color: white;
                 }
+            }
+            
+        }
+
+        &.selected{
+            .label{
+                display: inline-block;
             }
         }
 

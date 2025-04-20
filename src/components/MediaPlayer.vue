@@ -29,14 +29,18 @@
 
     const playerElementId = 'media-player'
 
-    watch(track, (newTrack) => {
+    watch(track, (newTrack, oldTrack) => {
+      if (!newTrack?.url || !newTrack?.source) return
 
-      console.log('track.source:', track.value?.source)
-      
-      if (newTrack?.url && newTrack?.source) {  
-        console.log('useMediaPlayer called with:', newTrack.source)      
+      // If no player exists yet, init
+      if (!media.value) {
         media.value = useMediaPlayer(newTrack.source, newTrack.url, 'media-player')
         media.value.initPlayer()
+      }
+
+      // If player exists and track changed, load new video
+      else if (newTrack.url !== oldTrack?.url) {
+        media.value.loadNewTrack?.(newTrack.url)
       }
     }, { immediate: true })
 
