@@ -1,16 +1,15 @@
 <template>
-    <div :id="playerElementId" class="iframe" style="display: none"></div>
     <div v-if="track" class="player">
-        <div class="play" @click="media.togglePlay">{{ media.isPlaying ? 'Pause' : '&#9654;' }}</div>
+        <div class="play" @click="togglePlay">{{ isPlaying ? '&#9632;' : '&#9654;' }}</div>
         <div class="track">
 
             <div class="title">
                 <a :href="track.url" target="_blank"><strong>{{ track.title }}</strong> / {{ track.desc }}</a>
-                <span class="time">{{ media.formattedCurrentTime }} / {{ media.formattedDuration }}</span>
+                <span class="time">{{ formattedCurrentTime }} / {{ formattedDuration }}</span>
             </div> 
 
             <div class="progress">
-              <div class="fill" :style="{ width: media.progressPercent + '%' }"></div>
+              <div class="fill" :style="{ width: progressPercent + '%' }"></div>
             </div>
 
         </div>
@@ -21,11 +20,18 @@
   <script setup lang="ts">
     import { computed } from 'vue'
     import { playerState } from '@/stores/playerState'
-    import { useMediaPlayer } from '@/components/players/useMediaPlayer'
 
+    const isPlaying = true
+    const formattedCurrentTime = "00:00"
+    const formattedDuration = "00:00"
+    const progressPercent = 0
+    
     const track = computed(() => playerState.currentTrack)
-    const media = useMediaPlayer("", "", "")
-    const playerElementId = 'media-player'
+
+    function togglePlay(){
+      // play / pause
+    }
+    
   </script>
   
   
