@@ -13,7 +13,7 @@
         style="display: none;"
       ></audio>
 
-        <div class="play" @click="togglePlay">{{ isPlaying ? '&#9632;' : '&#9654;' }}</div>
+        <div class="play" @click="togglePlay">{{ isPlaying ? '&#9724;' : '&#9654;' }}</div>
         <div class="track">
 
             <div class="title">
