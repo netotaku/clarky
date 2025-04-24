@@ -31,7 +31,7 @@
 </template>
   
   <script setup lang="ts">
-      import { ref, computed, watch, onMounted, nextTick } from 'vue'
+      import { ref, computed, watch, nextTick } from 'vue'
       import { playerState } from '@/stores/playerState'
       
       const audioRef = ref<HTMLAudioElement | null>(null) 
@@ -101,11 +101,6 @@
         if (audioRef.value.paused)  audioRef.value.play()
         else audioRef.value.pause()
       }
-
-      onMounted(() => {
-        // Now audioRef.value is guaranteed non-null
-        // console.log('Audio element is ready:', audioRef.value)
-      })
     
   </script>
   
@@ -114,30 +109,11 @@
 
     .player {
 
-      .play{
-          height: 90px;
-          min-width: 90px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: rgba(255,255,255, .2);
-          font-size: 32px;
-          cursor: pointer;
-          &:hover{
-              background: #f90;
-          }
-      }
-
-      .thumb{
-          height: 90px;
-          width: 90px;      
-      }
-      
       position: fixed;
       bottom: 22px;
       left: 22px;
       right: 22px;
-      
+
       background-color: rgba(17, 17, 17, 0.6); // dark translucent fallback
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px); // ✅ Safari support
@@ -149,7 +125,59 @@
       flex-direction: row;
       
       overflow: hidden;
-      border-radius: 22px;
+      border-radius: 22px; 
+  
+
+      @media (max-width: 600px) {
+        display: block;
+        //flex-direction: column;
+        border-radius: 0px; 
+        background: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none; // ✅ Safari support
+        top: 0px;
+        bottom: 0px;
+        left: 12px;
+        right: 12px;
+        pointer-events: none;
+
+
+      }
+
+      .play{
+          height: 90px;
+          min-width: 90px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(255,255,255, .2);
+          font-size: 32px;
+          cursor: pointer;
+          pointer-events: auto!important;
+
+          &:hover{
+              background: #f90;
+          }
+          @media (max-width: 600px) {
+            display: flex;
+            height: 60px;
+            width: 60px;
+            min-width: 60px;  
+            font-size: 22px;  
+            margin-top: 12px; 
+            background: #f60;  
+            border-radius: 22px;     
+          }
+      }
+
+      .thumb{
+          height: 90px;
+          width: 90px;  
+          @media (max-width: 600px) {
+            display: none;
+          }    
+      }
+      
     }
     
     .track {
@@ -159,23 +187,71 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding-right: 22px;
-      padding-left: 22px;
+      padding: 0 22px;
+
+
+      flex: 1 1 auto; 
+      min-width: 0;   
+      width: 100%;        
+
+      @media (max-width: 600px) {
+
+        position: absolute;
+        bottom: 0px;
+        // margin: 12px;
+
+        background-color: rgba(17, 17, 17, 0.6); // dark translucent fallback
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px); // ✅ Safari support
+
+        // padding: 12px;
+
+        padding:12px;
+
+        border-radius: 8px;
+        overflow: hidden;
+
+      }
+      
       .title{
+
+          position: relative;
+        
           padding-bottom: 12px;
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-end;
+
+
+        
+          a{
+          
+
+
+              display: block;
+              color: #fff;
+              text-decoration: none;
+
+              position: relative;
+              overflow: hidden;
+              white-space: nowrap;   
+              text-overflow: ellipsis;
+
+              margin-right: 110px;
+              
+              &:hover{
+                  text-decoration: underline;
+              }
+          }
+        
           .time{
+
             font-family: monospace;
             font-size: 14px;
-          }
-      }
-      a{
-          color: #fff;
-          text-decoration: none;
-          &:hover{
-              text-decoration: underline;
+            position: absolute;
+            right: 0px;
+            top: 2px;
+            white-space: nowrap;  
+            @media (max-width: 600px) {
+             // margin-top: 6px;       
+            }
           }
       }
     }
