@@ -36,7 +36,7 @@
             list-style-type: none;
             li{            
                 a{
-                    display: block;
+                    display: inline-block;
                     text-decoration: none;
                     color: white;
                     font-weight: bold;

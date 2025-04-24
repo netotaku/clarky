@@ -31,11 +31,12 @@
 
     function playTrack(item: MediaItem) {
         playerState.currentTrack = {
+            platform: item.platform,
             title: item.title,
             desc: item.desc,
             url: item.url,
             thumbnail: item.thumbnail,
-            source: item.source
+            audio: item.audio
         }
     }
   
@@ -44,9 +45,8 @@
         title: string
         thumbnail: string
         desc: string
-        platform: string
-        posted_at: string
-        source: string
+        platform: string        
+        audio: string
     }
   
     const items = ref(media as MediaItem[])

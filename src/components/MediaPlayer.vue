@@ -1,11 +1,22 @@
 <template>
     <div v-if="track" class="player">
+
+      <audio
+        id="HTMLPlayer"
+        ref="audioRef"
+        controls
+        @loadedmetadata="onLoadedMetadata"
+        @timeupdate="onTimeUpdate"
+        @ended="onEnded"
+        style="display: none;"
+      ></audio>
+
         <div class="play" @click="togglePlay">{{ isPlaying ? '&#9632;' : '&#9654;' }}</div>
         <div class="track">
 
             <div class="title">
                 <a :href="track.url" target="_blank"><strong>{{ track.title }}</strong> / {{ track.desc }}</a>
-                <span class="time">{{ formattedCurrentTime }} / {{ formattedDuration }}</span>
+                <span class="time">{{ formatTime(currentTime) }} / {{ formatTime(duration) }}</span>
             </div> 
 
             <div class="progress">
@@ -18,19 +29,72 @@
 </template>
   
   <script setup lang="ts">
-    import { computed } from 'vue'
-    import { playerState } from '@/stores/playerState'
+      import { ref, computed, watch, onMounted } from 'vue'
+      import { playerState } from '@/stores/playerState'
 
-    const isPlaying = true
-    const formattedCurrentTime = "00:00"
-    const formattedDuration = "00:00"
-    const progressPercent = 0
-    
-    const track = computed(() => playerState.currentTrack)
+      // Reference to the HTML <audio> element
+      const audioRef = ref<HTMLAudioElement | null>(null)
 
-    function togglePlay(){
-      // play / pause
-    }
+      // Computed current track from your global state
+      const track = computed(() => playerState.currentTrack)
+
+      // Reactive time values
+      const currentTime = ref(0)
+      const duration = ref(0)
+      const progressPercent = ref(0) // <-- NEW
+
+      const isPlaying = true // debug
+      
+      function calculateProgressPercent(current: number, total: number): number {
+        if (total <= 0) return 0
+        return (current / total) * 100
+      }
+
+      function onLoadedMetadata() {
+        if (!audioRef.value) return
+        duration.value = audioRef.value.duration
+      }
+
+      function onTimeUpdate() {
+        if (!audioRef.value) return
+        currentTime.value = audioRef.value.currentTime
+        progressPercent.value = calculateProgressPercent(
+          currentTime.value,
+          duration.value
+        )
+      }
+
+      function onEnded() {
+        console.log("track end")
+      }
+
+      // Watch for track changes and load new audio
+      watch(track, (newTrack) => {
+        if (!newTrack || !audioRef.value) return
+        console.log("track change", newTrack.audio)
+        audioRef.value.src = newTrack.audio
+        audioRef.value.load()
+        audioRef.value.play()
+        // Reset time            
+        currentTime.value = 0
+        progressPercent.value = 0
+      })
+
+      function formatTime(sec: number) {
+        const m = Math.floor(sec / 60)
+        const s = Math.floor(sec % 60)
+        return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`
+      }
+
+      function togglePlay(){
+        //
+      }
+
+
+      onMounted(() => {
+        // Now audioRef.value is guaranteed non-null
+        console.log('Audio element is ready:', audioRef.value)
+      })
     
   </script>
   
