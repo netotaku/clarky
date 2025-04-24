@@ -55,6 +55,10 @@
             margin-bottom: 0px;
             font-style: italic;
         }
+        .large{
+            font-size: 1.6em;
+            line-height: 1.2;
+        }
     }
 
 </style>
