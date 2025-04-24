@@ -115,17 +115,17 @@
         }
 
         a {
-            display: block;
-            height: 100%; // ensures it fills the card
+           position: relative;
+           overflow: hidden;
+            height: 100%;
             padding: 0px;
             color: inherit;
             text-decoration: none;   
             background: #111;
             
-            position: relative;
-            overflow: hidden;
-            border-top-left-radius: 22px;
-            border-top-right-radius: 22px;            
+            display: block;         
+            border-radius: 22px 22px 0 0;
+            
             padding-bottom: 32px; 
       
         }

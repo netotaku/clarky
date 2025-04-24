@@ -65,7 +65,7 @@
         background-position: center bottom; 
         // display: flex;        
         @media (max-width: 600px) {
-            padding-top: 160px; 
+            padding-top: 220px; 
             background-position: -390px bottom;
             background-size: 1200px;            
         }

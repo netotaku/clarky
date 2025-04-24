@@ -13,7 +13,9 @@
         style="display: none;"
       ></audio>
 
-        <div class="play" @click="togglePlay">{{ isPlaying ? '&#9724;' : '&#9654;' }}</div>
+        <div class="play" :class="{ playing: isPlaying, pausing: !isPlaying }" @click="togglePlay">
+          <div class="ico"></div>
+        </div>
         <div class="track">
 
             <div class="title">
@@ -129,19 +131,11 @@
   
 
       @media (max-width: 600px) {
-        display: block;
-        //flex-direction: column;
-        border-radius: 0px; 
-        background: none;
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none; // ✅ Safari support
-        top: 0px;
-        bottom: 0px;
+        top: 12px;
+        bottom: auto;
+        border-radius: 8px; 
         left: 12px;
         right: 12px;
-        pointer-events: none;
-
-
       }
 
       .play{
@@ -155,18 +149,26 @@
           cursor: pointer;
           pointer-events: auto!important;
 
+          .ico{
+            width: 24px;
+            height: 26px;
+            background: url(/img/playPause.png);
+            background-position-x: -24px;
+          }
+
+          &.pausing{
+            .ico{
+              background-position-x: 0px;
+            } 
+          }
+
           &:hover{
               background: #f90;
           }
-          @media (max-width: 600px) {
-            display: flex;
+          @media (max-width: 600px) {            
             height: 60px;
             width: 60px;
-            min-width: 60px;  
-            font-size: 22px;  
-            margin-top: 12px; 
-            background: #f60;  
-            border-radius: 22px;     
+            min-width: 60px;   
           }
       }
 
@@ -196,21 +198,6 @@
 
       @media (max-width: 600px) {
 
-        position: absolute;
-        bottom: 0px;
-        // margin: 12px;
-
-        background-color: rgba(17, 17, 17, 0.6); // dark translucent fallback
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px); // ✅ Safari support
-
-        // padding: 12px;
-
-        padding:12px;
-
-        border-radius: 8px;
-        overflow: hidden;
-
       }
       
       .title{
@@ -223,8 +210,6 @@
         
           a{
           
-
-
               display: block;
               color: #fff;
               text-decoration: none;
@@ -249,9 +234,6 @@
             right: 0px;
             top: 2px;
             white-space: nowrap;  
-            @media (max-width: 600px) {
-             // margin-top: 6px;       
-            }
           }
       }
     }

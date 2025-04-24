@@ -1,8 +1,14 @@
 [
-    
     {
         "platform": "releases",
-        "url": "https://soundcloud.com/funspongerecords/1-night-of-the-vampire-talk-talk?in=funspongerecords%2Fsets%2Ffun-sponge-records-2nd-birthday-compilation",
+        "url": "https://soundcloud.com/death-pop/infiltrate-202",
+        "title": "Infiltrate 202",
+        "desc": "Altern8 x Eric B & Rakim",
+        "thumbnail": "/img/covers/ebr.jpg",        
+        "audio": "https://notv-audio.s3.us-east-1.amazonaws.com/audio/Night+Of+The+Vampire+-+Infiltrate+202.mp3"
+    },{
+        "platform": "releases",
+        "url": "https://soundcloud.com/funspongerecords/1-night-of-the-vampire-talk-talk",
         "title": "Talk Talk",
         "desc": "Night of the Vampire (FSR)",
         "thumbnail": "/img/covers/fs.jpeg",        
